@@ -1,4 +1,6 @@
-import { Recycle, Bell, Settings, Search } from "lucide-react";
+import { Recycle, Bell, Settings, Search, ScanLine } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const DashboardHeader = () => (
   <header className="flex items-center justify-between py-4">
@@ -13,6 +15,11 @@ const DashboardHeader = () => (
     </div>
 
     <div className="flex items-center gap-2">
+      <Link to="/detect">
+        <Button variant="outline" size="sm" className="gap-2 glow-border">
+          <ScanLine className="w-4 h-4" /> Detect Waste
+        </Button>
+      </Link>
       <button className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-colors">
         <Search className="w-4 h-4" />
       </button>
